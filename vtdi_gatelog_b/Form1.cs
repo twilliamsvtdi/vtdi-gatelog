@@ -46,7 +46,9 @@ namespace vtdi_gatelog_b
 
         private void gateInOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            GateInOut gateInOut = new GateInOut();
+            gateInOut.MdiParent = this;
+            gateInOut.Show();
         }
 
         private void gateReportsToolStripMenuItem_Click(object sender, EventArgs e)

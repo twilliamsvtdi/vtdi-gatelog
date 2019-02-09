@@ -63,6 +63,16 @@ namespace vtdi_gatelog_b.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap heart_logo {
+            get {
+                object obj = ResourceManager.GetObject("heart_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hh1 {
             get {
                 object obj = ResourceManager.GetObject("hh1", resourceCulture);

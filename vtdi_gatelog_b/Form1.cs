@@ -24,8 +24,6 @@ namespace vtdi_gatelog_b
 
         private void logInToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-        
-
             LogInForm logIn = new LogInForm();
             logIn.MdiParent = this;
             logIn.Show();

@@ -100,14 +100,14 @@
             // guestListToolStripMenuItem
             // 
             this.guestListToolStripMenuItem.Name = "guestListToolStripMenuItem";
-            this.guestListToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.guestListToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.guestListToolStripMenuItem.Text = "Guest List";
             this.guestListToolStripMenuItem.Click += new System.EventHandler(this.guestListToolStripMenuItem_Click);
             // 
             // gateInOutToolStripMenuItem
             // 
             this.gateInOutToolStripMenuItem.Name = "gateInOutToolStripMenuItem";
-            this.gateInOutToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.gateInOutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.gateInOutToolStripMenuItem.Text = "Gate In/Out";
             this.gateInOutToolStripMenuItem.Click += new System.EventHandler(this.gateInOutToolStripMenuItem_Click);
             // 
@@ -123,14 +123,14 @@
             // gateReportsToolStripMenuItem
             // 
             this.gateReportsToolStripMenuItem.Name = "gateReportsToolStripMenuItem";
-            this.gateReportsToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.gateReportsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.gateReportsToolStripMenuItem.Text = "Gate Reports";
             this.gateReportsToolStripMenuItem.Click += new System.EventHandler(this.gateReportsToolStripMenuItem_Click);
             // 
             // userLogsToolStripMenuItem
             // 
             this.userLogsToolStripMenuItem.Name = "userLogsToolStripMenuItem";
-            this.userLogsToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.userLogsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.userLogsToolStripMenuItem.Text = "User Logs";
             this.userLogsToolStripMenuItem.Click += new System.EventHandler(this.userLogsToolStripMenuItem_Click);
             // 
@@ -144,6 +144,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "VTDI Gate Log Application";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

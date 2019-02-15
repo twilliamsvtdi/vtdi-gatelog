@@ -16,7 +16,12 @@ namespace vtdi_gatelog_b
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            var parent = new Form1();
+            parent.IsMdiContainer = true;
+            var login = new LogInForm();
+            login.MdiParent = parent;
+            Application.Run(parent);
+            Application.Run(login);
         }
     }
 }

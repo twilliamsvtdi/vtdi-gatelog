@@ -36,7 +36,7 @@ namespace vtdi_gatelog_b
             var purpose = cbPurpose.SelectedItem.ToString();
             var item = cbItemsToDeclare.SelectedItem.ToString();
             var comments = tbComments.Text;
-
+            
             //Validating that the Text Box is not empty
             if (String.IsNullOrEmpty(lastName))
             {

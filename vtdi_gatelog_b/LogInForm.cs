@@ -24,24 +24,22 @@ namespace vtdi_gatelog_b
             string username = tbUsername.Text;
             var password = tbPassword.Text;
 
-            ///String.IsNullOrEmpty(string value) allows you to check
-            /// if a string variable is empty or null. 
-            if (String.IsNullOrEmpty(username) || 
-                String.IsNullOrEmpty(password))
+            if (username != "admin" || password != "pass")
             {
-                MessageBox.Show("Please enter values!");
-            }
-            // You can use the String.Equals() function to compare
-            // two string values and see if they are equal. 
-            else if(username == "admin" && 
-                String.Equals("admin", password))
-            {
-                MessageBox.Show($"Welcome {username}");
+                MessageBox.Show("Invalid Credentials");
             }
             else
             {
-                MessageBox.Show("Invalid Credentials Entered");
+                MessageBox.Show($"Welcome {username}");
+                //Declaring a an object of Type Form1, which isthe parent of the login form
+                var parent = (Form1)this.MdiParent;
+                //Change the property in Form1 to true.
+                parent.isLoggedIn = true;
+                this.Close();
+
+
             }
+
         }
     }
 }

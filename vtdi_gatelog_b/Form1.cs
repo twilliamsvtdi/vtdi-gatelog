@@ -12,6 +12,8 @@ namespace vtdi_gatelog_b
 {
     public partial class Form1 : Form
     {
+        public bool isLoggedIn = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -24,48 +26,93 @@ namespace vtdi_gatelog_b
 
         private void logInToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            LogInForm logIn = new LogInForm();
-            logIn.MdiParent = this;
-            logIn.Show();
+            ShowLoginForm();
         }
 
         private void userManagementToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            if (isLoggedIn)
+            {
+                MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            }
+            else
+            {
+                ShowLoginForm();
+            }
+
         }
 
         private void schedulingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            if (isLoggedIn)
+                MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            else
+            {
+                ShowLoginForm();
+            }
         }
 
         private void guestListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            if (isLoggedIn)
+                MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            else
+            {
+                ShowLoginForm();
+            }
         }
 
         private void gateInOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GateInOut gateInOut = new GateInOut();
-            gateInOut.MdiParent = this;
-            gateInOut.Show();
+            if (this.isLoggedIn)
+            {
+                GateInOut gateInOut = new GateInOut();
+                gateInOut.MdiParent = this;
+                gateInOut.Show();
+            }
+            else
+            {
+                ShowLoginForm();
+            }
+
         }
 
         private void gateReportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            if (isLoggedIn)
+                MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            else
+            {
+                ShowLoginForm();
+            }
         }
 
         private void userLogsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            if (isLoggedIn)
+                MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            else
+            {
+                ShowLoginForm();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            menuStrip1.Enabled = false;
-            LogInForm login = new LogInForm();
-            login.Show();
+
+            ShowLoginForm();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void ShowLoginForm()
+        {
+            LogInForm logIn = new LogInForm();
+            logIn.MdiParent = this;
+            logIn.Show();
         }
     }
 }

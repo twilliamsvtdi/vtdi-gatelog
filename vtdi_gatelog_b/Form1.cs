@@ -60,12 +60,5 @@ namespace vtdi_gatelog_b
         {
             MessageBox.Show($"{btn_clicked(sender)} Clicked");
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            menuStrip1.Enabled = false;
-            LogInForm login = new LogInForm();
-            login.Show();
-        }
     }
 }

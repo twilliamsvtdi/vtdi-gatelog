@@ -19,29 +19,7 @@ namespace vtdi_gatelog_b
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            // You can always use the variable types that 
-            // you are familair with. (string, int, etc...)
-            string username = tbUsername.Text;
-            var password = tbPassword.Text;
-
-            ///String.IsNullOrEmpty(string value) allows you to check
-            /// if a string variable is empty or null. 
-            if (String.IsNullOrEmpty(username) || 
-                String.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Please enter values!");
-            }
-            // You can use the String.Equals() function to compare
-            // two string values and see if they are equal. 
-            else if(username == "admin" && 
-                String.Equals("admin", password))
-            {
-                MessageBox.Show($"Welcome {username}");
-            }
-            else
-            {
-                MessageBox.Show("Invalid Credentials Entered");
-            }
+            
         }
     }
 }

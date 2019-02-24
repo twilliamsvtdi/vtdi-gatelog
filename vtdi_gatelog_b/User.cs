@@ -24,10 +24,10 @@ namespace vtdi_gatelog_b
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public Nullable<int> GenderId { get; set; }
+        public Nullable<System.DateTime> DateCreated { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int GenderId { get; set; }
-        public System.DateTime DateCreated { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GateInOut> GateInOuts { get; set; }

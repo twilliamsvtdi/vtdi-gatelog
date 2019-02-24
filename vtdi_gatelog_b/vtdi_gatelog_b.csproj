@@ -61,16 +61,19 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GateInOut.cs">
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
-    <Compile Include="GateInOut.Designer.cs">
-      <DependentUpon>GateInOut.cs</DependentUpon>
+    <Compile Include="GateLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GateLogForm.Designer.cs">
+      <DependentUpon>GateLogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemsToDeclare.cs">
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
@@ -81,34 +84,37 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurposeOfVisit.cs">
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
     <Compile Include="VehicleType.cs">
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
-    <Compile Include="vtdi_gate_model.Context.cs">
+    <Compile Include="vtdi_gate_log.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>vtdi_gate_model.Context.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="vtdi_gate_model.cs">
+    <Compile Include="vtdi_gate_log.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>vtdi_gate_model.tt</DependentUpon>
+      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
-    <Compile Include="vtdi_gate_model.Designer.cs">
+    <Compile Include="vtdi_gate_log.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>vtdi_gate_model.edmx</DependentUpon>
+      <DependentUpon>vtdi_gate_log.edmx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GateInOut.resx">
-      <DependentUpon>GateInOut.cs</DependentUpon>
+    <EmbeddedResource Include="GateLogForm.resx">
+      <DependentUpon>GateLogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
@@ -133,12 +139,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="vtdi_gate_model.edmx">
+    <EntityDeploy Include="vtdi_gate_log.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>vtdi_gate_model.Designer.cs</LastGenOutput>
+      <LastGenOutput>vtdi_gate_log.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="vtdi_gate_model.edmx.diagram">
-      <DependentUpon>vtdi_gate_model.edmx</DependentUpon>
+    <None Include="vtdi_gate_log.edmx.diagram">
+      <DependentUpon>vtdi_gate_log.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -154,19 +160,20 @@
     <None Include="Resources\heart_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="vtdi_gate_model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>vtdi_gate_model.Context.cs</LastGenOutput>
-      <DependentUpon>vtdi_gate_model.edmx</DependentUpon>
-    </Content>
-    <Content Include="vtdi_gate_model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>vtdi_gate_model.edmx</DependentUpon>
-      <LastGenOutput>vtdi_gate_model.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="gatelog.sql" />
+    <Content Include="vtdi_gate_log.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vtdi_gate_log.edmx</DependentUpon>
+      <LastGenOutput>vtdi_gate_log.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="vtdi_gate_log.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vtdi_gate_log.edmx</DependentUpon>
+      <LastGenOutput>vtdi_gate_log.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

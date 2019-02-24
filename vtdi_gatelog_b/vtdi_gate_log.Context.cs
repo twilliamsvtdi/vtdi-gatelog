@@ -13,10 +13,10 @@ namespace vtdi_gatelog_b
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class vtdi_gate_log_dbEntities : DbContext
+    public partial class vtdi_gate_log_dbEntities1 : DbContext
     {
-        public vtdi_gate_log_dbEntities()
-            : base("name=vtdi_gate_log_dbEntities")
+        public vtdi_gate_log_dbEntities1()
+            : base("name=vtdi_gate_log_dbEntities1")
         {
         }
     
@@ -26,10 +26,11 @@ namespace vtdi_gatelog_b
         }
     
         public virtual DbSet<GateInOut> GateInOuts { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<ItemsToDeclare> ItemsToDeclares { get; set; }
         public virtual DbSet<PurposeOfVisit> PurposeOfVisits { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
-        public virtual DbSet<Gender> Genders { get; set; }
     }
 }

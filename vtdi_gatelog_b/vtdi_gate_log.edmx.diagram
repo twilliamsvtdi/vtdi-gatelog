@@ -6,12 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6c92971c2713441882faf7e46746f686" Name="Diagram1">
         <EntityTypeShape EntityType="vtdi_gate_log_dbModel.GateInOut" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.Gender" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.ItemsToDeclare" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.PurposeOfVisit" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.User" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.VehicleType" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.Gender" Width="1.5" PointX="1" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.ItemsToDeclare" Width="1.5" PointX="8.125" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.PurposeOfVisit" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.User" Width="1.5" PointX="3.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vtdi_gate_log_dbModel.VehicleType" Width="1.5" PointX="7.25" PointY="4.875" IsExpanded="true" />
         <AssociationConnector Association="vtdi_gate_log_dbModel.FK_GateInOut_ItemsToDeclare" ManuallyRouted="false" />
         <AssociationConnector Association="vtdi_gate_log_dbModel.FK_GateInOut_Purpose" ManuallyRouted="false" />
         <AssociationConnector Association="vtdi_gate_log_dbModel.FK_GateInOut_Users" ManuallyRouted="false" />

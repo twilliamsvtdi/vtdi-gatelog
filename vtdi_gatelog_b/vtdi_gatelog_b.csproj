@@ -86,9 +86,6 @@
     <Compile Include="PurposeOfVisit.cs">
       <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>vtdi_gate_log.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
@@ -110,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>vtdi_gate_log.edmx</DependentUpon>
     </Compile>
+    <Compile Include="vtdi_gate_log_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vtdi_gate_log_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +132,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PurposeOfVisit.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +148,17 @@
     </EntityDeploy>
     <None Include="vtdi_gate_log.edmx.diagram">
       <DependentUpon>vtdi_gate_log.edmx</DependentUpon>
+    </None>
+    <None Include="vtdi_gate_log_dbDataSet.xsc">
+      <DependentUpon>vtdi_gate_log_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vtdi_gate_log_dbDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vtdi_gate_log_dbDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vtdi_gate_log_dbDataSet.xss">
+      <DependentUpon>vtdi_gate_log_dbDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

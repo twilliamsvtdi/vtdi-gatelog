@@ -69,7 +69,7 @@
             // 
             this.logInToolStripMenuItem.Image = global::vtdi_gatelog_b.Properties.Resources.User_noHalo_16x;
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.logInToolStripMenuItem.Text = "Log In";
             this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click_1);
             // 
@@ -77,14 +77,14 @@
             // 
             this.userManagementToolStripMenuItem1.Image = global::vtdi_gatelog_b.Properties.Resources.hh1;
             this.userManagementToolStripMenuItem1.Name = "userManagementToolStripMenuItem1";
-            this.userManagementToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.userManagementToolStripMenuItem1.Size = new System.Drawing.Size(205, 26);
             this.userManagementToolStripMenuItem1.Text = "User Management";
             this.userManagementToolStripMenuItem1.Click += new System.EventHandler(this.userManagementToolStripMenuItem1_Click);
             // 
             // schedulingToolStripMenuItem
             // 
             this.schedulingToolStripMenuItem.Name = "schedulingToolStripMenuItem";
-            this.schedulingToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.schedulingToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.schedulingToolStripMenuItem.Text = "Scheduling";
             this.schedulingToolStripMenuItem.Click += new System.EventHandler(this.schedulingToolStripMenuItem_Click);
             // 
@@ -144,6 +144,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "VTDI Gate Log Application";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

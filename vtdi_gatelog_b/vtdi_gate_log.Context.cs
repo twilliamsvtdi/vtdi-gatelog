@@ -29,7 +29,6 @@ namespace vtdi_gatelog_b
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<ItemsToDeclare> ItemsToDeclares { get; set; }
         public virtual DbSet<PurposeOfVisit> PurposeOfVisits { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
     }

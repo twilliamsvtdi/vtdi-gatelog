@@ -12,7 +12,7 @@ namespace vtdi_gatelog_b
 {
     public partial class Form1 : Form
     {
-        public bool isLoggedIn = false;
+        public bool isLoggedIn = true;
         public string userLoggedIn = "";
 
         public Form1()
@@ -35,7 +35,12 @@ namespace vtdi_gatelog_b
         private void userManagementToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (isLoggedIn)
-                MessageBox.Show($"{btn_clicked(sender)} Clicked");
+            {
+                //MessageBox.Show($"{btn_clicked(sender)} Clicked");
+                var usermng = new UserManagement();
+                usermng.MdiParent = this;
+                usermng.Show();
+            }
             else
             {
                 ShowLoginForm();

@@ -89,6 +89,12 @@
     <Compile Include="User.cs">
       <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleType.cs">
       <DependentUpon>vtdi_gate_log.tt</DependentUpon>
     </Compile>
@@ -131,6 +137,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PurposeOfVisit.datasource" />
     <None Include="Properties\Settings.settings">

@@ -66,59 +66,55 @@ namespace vtdi_gatelog_b
             //this code block and monitor for any errors that might appear and prevent program crashes. 
             try
             {
+                //Collect data from the form
+                var fname = tbFirstName.Text;
+                var lname = tbLastName.Text;
+                var email = tbEmailAddress.Text;
+                var username = tbUsername.Text;
+                var gender = Convert.ToInt32(cbGenders.SelectedValue);
+
+                var rand = new Random();
+                //This is my random generation of a password. I am using the first letter of the given first name,
+                //the last name and a random number generated between 1 and 100.
+                //This password NEEDS TO BE ENCRYPTED!!!! We will cover that
+                var password = $"{fname[0]}{lname}{rand.Next(0, 100)}";
                 //Validate minimum data is collected, as well as any other validation that you may want to enforce.
-                if (!isFormInvalid())
+                if (isFormInvalid())
                 {
-                    //Collect data from the form
-                    var fname = tbFirstName.Text;
-                    var lname = tbLastName.Text;
-                    var email = tbEmailAddress.Text;
-                    var username = tbUsername.Text;
-                    var gender = Convert.ToInt32(cbGenders.SelectedValue);
-
-                    var rand = new Random();
-
-                    //This is my random generation of a password. I am using the first letter of the given first name,
-                    //the last name and a random number generated between 1 and 100.
-                    //This password NEEDS TO BE ENCRYPTED!!!! We will cover that
-                    var password = $"{fname[0]}{lname}{rand.Next(0, 100)}";
-                    //Do further validations to chec
-                    if (!(CheckEmail(email) || CheckUserName(username)))
-                    {
-                        var user = new User
-                        {
-                            FirstName = fname,
-                            LastName = lname,
-                            Email = email,
-                            Username = username,
-                            GenderId = gender,
-                            Password = password,
-                            DateCreated = DateTime.Now
-                        };
-                        _dbContext.Users.Add(user);
-                        _dbContext.SaveChanges();
-                        //Functions to Reset the fields to blank and reload all the data in the GridView
-                        //The reload makes the changes appear near real-time.
-                        ResetForm();
-                        RefreshGridView();
-                    }
-                    else
-                    {
-                        MessageBox.Show("A user exists with the prescribed username or email!");
-                    }
+                    MessageBox.Show("Please validate all data before submission!");
+                }
+                //Do further validations to checck for username and email address
+                else if (CheckEmail(email) || CheckUserName(username))
+                {
+                    MessageBox.Show("A user exists with this email/username!");
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Data Entered");
+                    var user = new User
+                    {
+                        FirstName = fname,
+                        LastName = lname,
+                        Email = email,
+                        Username = username,
+                        GenderId = gender,
+                        Password = password,
+                        DateCreated = DateTime.Now
+                    };
+
+                    _dbContext.Users.Add(user);
+                    _dbContext.SaveChanges();
+                    //Functions to Reset the fields to blank and reload all the data in the GridView
+                    //The reload makes the changes appear near real-time.
+                    RefreshGridView();
+                    ResetForm();
                 }
-                
-                
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"A fatal error occurred. {ex.Message}");
+                MessageBox.Show($"There has been a fatal error: {ex.Message}");
             }
-            
+
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -46,6 +46,7 @@
             this.gvUsers = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnCreateUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,8 +62,11 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnCreateUser);
             this.splitContainer1.Panel1.Controls.Add(this.cbGenders);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel1.Controls.Add(this.btnSave);
+            this.splitContainer1.Panel1.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.tbUsername);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
@@ -78,11 +82,9 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnSearch);
             this.splitContainer1.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
-            this.splitContainer1.Panel2.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel2.Controls.Add(this.gvUsers);
-            this.splitContainer1.Size = new System.Drawing.Size(1093, 605);
-            this.splitContainer1.SplitterDistance = 392;
+            this.splitContainer1.Size = new System.Drawing.Size(1160, 605);
+            this.splitContainer1.SplitterDistance = 416;
             this.splitContainer1.TabIndex = 0;
             // 
             // cbGenders
@@ -95,11 +97,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(117, 390);
+            this.btnSave.Location = new System.Drawing.Point(16, 379);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(163, 52);
+            this.btnSave.Size = new System.Drawing.Size(159, 52);
             this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "Save User";
+            this.btnSave.Text = "Save New User";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -188,9 +190,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(456, 535);
+            this.btnDelete.Location = new System.Drawing.Point(239, 458);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(197, 49);
+            this.btnDelete.Size = new System.Drawing.Size(155, 49);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete User";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -198,9 +200,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(55, 535);
+            this.btnUpdate.Location = new System.Drawing.Point(239, 381);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(197, 49);
+            this.btnUpdate.Size = new System.Drawing.Size(155, 49);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -212,7 +214,7 @@
             this.gvUsers.Location = new System.Drawing.Point(16, 79);
             this.gvUsers.Name = "gvUsers";
             this.gvUsers.RowTemplate.Height = 24;
-            this.gvUsers.Size = new System.Drawing.Size(669, 431);
+            this.gvUsers.Size = new System.Drawing.Size(712, 431);
             this.gvUsers.TabIndex = 0;
             this.gvUsers.SelectionChanged += new System.EventHandler(this.gvUsers_SelectionChanged);
             // 
@@ -233,11 +235,21 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // btnCreateUser
+            // 
+            this.btnCreateUser.Location = new System.Drawing.Point(16, 458);
+            this.btnCreateUser.Name = "btnCreateUser";
+            this.btnCreateUser.Size = new System.Drawing.Size(159, 52);
+            this.btnCreateUser.TabIndex = 13;
+            this.btnCreateUser.Text = "Reset Form";
+            this.btnCreateUser.UseVisualStyleBackColor = true;
+            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 605);
+            this.ClientSize = new System.Drawing.Size(1160, 605);
             this.Controls.Add(this.splitContainer1);
             this.Name = "UserManagement";
             this.Text = "User Management";
@@ -273,5 +285,6 @@
         private System.Windows.Forms.DataGridView gvUsers;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnCreateUser;
     }
 }

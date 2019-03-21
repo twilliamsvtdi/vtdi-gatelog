@@ -13,6 +13,7 @@ namespace vtdi_gatelog_b
     public partial class UserManagement : Form
     {
         private vtdi_gate_log_dbEntities1 _dbContext;
+        private int rowid;
         public UserManagement()
         {
             InitializeComponent();
@@ -119,35 +120,40 @@ namespace vtdi_gatelog_b
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-                //This line retrieves the database ID value associated with the row the was selected in the grid
-                //Remember that we hid the ID column in the form load function. It comes in handy here, as the ID is needed
-                //To retrieve the value.
-                var selectedRowId = GetSelectedRow();
-                //Here we call a function, which will run the query and return the row with the retrieved ID
-                var userToUpdate = GetUserByID(selectedRowId);
-                //IF a user is returned, and the form is valid, then proceed to update the user's properties with the 
-                // values present in the controls (we don't know what was changed and that is why we validated and re-enter)
-                if (userToUpdate != null && !isFormInvalid())
+                //Collect data from the form
+                var fname = tbFirstName.Text;
+                var lname = tbLastName.Text;
+                var email = tbEmailAddress.Text;
+                var username = tbUsername.Text;
+                var gender = Convert.ToInt32(cbGenders.SelectedValue);
+
+                //Validate minimum data is collected, as well as any other validation that you may want to enforce.
+                if (isFormInvalid())
                 {
-                    userToUpdate.FirstName = tbFirstName.Text;
-                    userToUpdate.LastName = tbLastName.Text;
-                    userToUpdate.Email = tbEmailAddress.Text;
-                    userToUpdate.Username = tbUsername.Text;
-                    userToUpdate.GenderId = Convert.ToInt32(cbGenders.SelectedValue);
-                    //Save Changes 
-                    _dbContext.SaveChanges();
-                    //
-                    ResetForm();
-                    RefreshGridView();
+                    MessageBox.Show("Please validate all data before submission!");
+                }
+                //Do further validations to checck for username and email address
+                else if (CheckEmail(email) || CheckUserName(username))
+                {
+                    MessageBox.Show("A user exists with this email/username!");
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Data Entered");
+                    var user = GetUserByID(rowid);
+                    user.FirstName = fname;
+                    user.LastName = lname;
+                    user.GenderId = gender;
+                    user.Username = username;
+                    user.Email = email;
+
+                    _dbContext.SaveChanges();
+
+                    RefreshGridView();
+                    ResetForm();
                 }
-               
             }
             catch (Exception ex)
             {
@@ -160,8 +166,7 @@ namespace vtdi_gatelog_b
         {
             try
             {
-                var selectedRowId = GetSelectedRow();
-                var userToDelete = GetUserByID(selectedRowId);
+                var userToDelete = GetUserByID(rowid);
                 if (userToDelete != null)
                 {
                     _dbContext.Users.Remove(userToDelete);
@@ -187,6 +192,7 @@ namespace vtdi_gatelog_b
             try
             {
                 var row = gvUsers.SelectedRows[0];
+                rowid = (int)row.Cells["Id"].Value;
                 tbFirstName.Text = row.Cells["FirstName"].Value.ToString();
                 tbLastName.Text = row.Cells["LastName"].Value.ToString();
                 tbEmailAddress.Text = row.Cells["Email"].Value.ToString();

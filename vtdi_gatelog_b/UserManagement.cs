@@ -84,7 +84,7 @@ namespace vtdi_gatelog_b
                 {
                     MessageBox.Show("Please validate all data before submission!");
                 }
-                //Do further validations to checck for username and email address
+                //Do further validations to check for username and email address
                 else if (CheckEmail(email) || CheckUserName(username))
                 {
                     MessageBox.Show("A user exists with this email/username!");
@@ -134,11 +134,6 @@ namespace vtdi_gatelog_b
                 if (isFormInvalid())
                 {
                     MessageBox.Show("Please validate all data before submission!");
-                }
-                //Do further validations to checck for username and email address
-                else if (CheckEmail(email) || CheckUserName(username))
-                {
-                    MessageBox.Show("A user exists with this email/username!");
                 }
                 else
                 {
@@ -213,10 +208,9 @@ namespace vtdi_gatelog_b
 
         }
 
-        private void btnCreateUser_Click(object sender, EventArgs e)
+        private void btnResetForm_Click(object sender, EventArgs e)
         {
             ResetForm();
-            tbUsername.Enabled = true;
         }
 
         int GetSelectedRow()
@@ -237,7 +231,6 @@ namespace vtdi_gatelog_b
             tbLastName.Clear();
             tbEmailAddress.Clear();
             tbUsername.Clear();
-            tbUsername.Enabled = false;
             cbGenders.SelectedIndex = 0;
         }
 
@@ -271,7 +264,7 @@ namespace vtdi_gatelog_b
 
         bool isFormInvalid()
         {
-            return String.IsNullOrEmpty(tbEmailAddress.Text) || String.IsNullOrEmpty(tbUsername.Text) || cbGenders.SelectedItem == null;
+            return String.IsNullOrEmpty(tbEmailAddress.Text) || String.IsNullOrEmpty(tbUsername.Text);
         }
     }
 }

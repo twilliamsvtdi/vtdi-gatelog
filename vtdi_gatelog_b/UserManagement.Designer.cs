@@ -243,7 +243,7 @@
             this.btnCreateUser.TabIndex = 13;
             this.btnCreateUser.Text = "Reset Form";
             this.btnCreateUser.UseVisualStyleBackColor = true;
-            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
+            this.btnCreateUser.Click += new System.EventHandler(this.btnResetForm_Click);
             // 
             // UserManagement
             // 

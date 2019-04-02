@@ -12,8 +12,8 @@ namespace vtdi_gatelog_b
 {
     public partial class Form1 : Form
     {
-        public bool isLoggedIn = true;
-        public string userLoggedIn = "";
+        public bool isLoggedIn = false;
+        
 
         public Form1()
         {
